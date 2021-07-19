@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코로나 시각화</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/covid.css')}}">
+    <script src="{{url_for('static', filename='js/covid.js')}}"></script>
+
+</head>
+<body>
+    <h1>코로나 시각화</h1>
+    <nav role="navigation">
+        <ul id="main-menu">
+            <li><a href="#" onclick="chart_view()">코로나</a></li>
+            <li><a href="#">백신 정보</a>
+                <ul id="sub-menu">
+                    <li><a href="#" onclick="kor_vac()">KOREA</a></li>
+                    <li><a href="#" onclick="world_vac()">WORLD</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Word Cloud</a>
+                <ul id="sub-menu">
+                    <li><a href="#" onclick="confirm()">국가-확진자</a></li>
+                    <li><a href="#" onclick="death()">국가-사망자</a></li>
+                    <li><a href="#" onclick="vaccine()">국가-백신접종</a></li>
+                    <li><a href="#" onclick="gdp()">국가-GDP</a></li>
+                    <li><a href="#" onclick="population()">국가-인구</a></li>
+                </ul>
+            </li>
+
+        </ul>
+    </nav>
+
+    <div id="view" style="display: block;"></div>
+    <div id="korea" style="display: block;"></div>
+    <div id = "chart" style="display: block;">
+        <div id='view1'></div>
+        <div id='view2'></div>
+        <div id='view3'></div>
+    </div>
+    <script>
+        // function show_img() {
+        //     const xhttp = new XMLHttpRequest();
+        //     xhttp.onreadystatechange = function () {
+        //         if (this.readyState == 4 && this.status == 200) {
+        //             img_name = this.responseText;
+        //             url_data = '<img src="./static/img/'+img_name+'.jpg" width="600" height="500">';
+        //             alert(img_name);
+        //             // console.log(url_data);
+        //             document.getElementById("view").innerHTML = url_data;
+        //         }
+        //     };
+        //     xhttp.open("POST", "image");
+        //     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        //     query = "img_name=" + document.getElementById("sub-menu").value;
+        //     console.log(query)
+        //     xhttp.send(query);
+        // }
+
+
+        // function chart_view() {
+        //     const xhttp = new XMLHttpRequest();
+        //     xhttp.onreadystatechange = function () {
+        //         if (this.readyState == 4 && this.status == 200) {
+        //             document.getElementById("covid").style.display = 'block';
+        //         }
+        //     };
+        //     xhttp.open("GET", "covidchart");
+        //     xhttp.send();
+        // }
+
+    </script>
+</body>
+</html>
